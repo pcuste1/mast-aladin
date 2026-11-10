@@ -1,8 +1,8 @@
 from .app_manager import AppManager
 from .plugin_manager import PluginManager
 from sidecar import Sidecar
-from mast_aladin import MastAladin
 from jdaviz.configs.deconfigged import App as JdavizApp
+from IPython.display import display
 
 
 class MastManager():
@@ -15,6 +15,10 @@ class MastManager():
         self._plugin_manager = PluginManager(self)
         # todo: add the other managers here
         # - sidecar manager: responsible for managing sidecar windows.abs
+
+    def close(self):
+        self._app_manager.close()
+        self._plugin_manager.close()
 
     @property
     def AppManager(self):
@@ -58,14 +62,20 @@ class MastManager():
 
     def display_apps(self):
         self._app_manager.check_for_new_instances(None)
-        sc = None
+        prev_ref = None
+        prev_anchor = None
         for name, app in self._app_manager.apps.items():
-            if sc is None:
-                sc = Sidecar(title=name, anchor='split-right')
+            if prev_anchor is None:
+                prev_anchor = 'split-right'
+            elif prev_anchor == 'split-right':
+                prev_anchor = 'split-bottom'
             else:
-                sc = Sidecar(title=name, anchor='split-bottom', ref=sc)
+                prev_anchor = 'split-right'
+
+            sc = Sidecar(title=name, anchor=prev_anchor, ref=prev_ref)
             with sc:
                 if isinstance(app, JdavizApp):
                     app.show()
                 else:
                     display(app)
+            prev_ref = sc

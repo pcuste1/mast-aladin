@@ -116,10 +116,12 @@ class JdavizSyncAdapter(ViewerSyncAdapter):
             return
 
         # Remove "projection" from the list of aspects to sync, as it is not supported in jdaviz.
-        if "projection" in aspects:
-            aspects.remove("projection")
+        supported_aspects = [
+            aspect for aspect in aspects
+            if aspect != "projection"
+        ]
 
-        super().sync_to(sync_viewer, aspects)
+        super().sync_to(sync_viewer, supported_aspects)
 
     def add_callback(self, func):
         if not self.ready:

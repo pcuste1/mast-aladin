@@ -29,7 +29,11 @@ class DestinationSelector(v.VuetifyTemplate):
         self.label = "dest ="
 
     def _get_selected_columns(self):
-        return [column for column in self.selected_columns if column not in self.disabled_columns]
+        return [
+            column
+            for column in self.selected_columns
+            if column in self.columns and column not in self.disabled_columns
+        ]
 
     def _get_enabled_columns(self):
         return [column for column in self.columns if column not in self.disabled_columns]
