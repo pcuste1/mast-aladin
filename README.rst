@@ -8,9 +8,6 @@
     :target: https://github.com/spacetelescope/mast-aladin/actions/workflows/ci_workflows.yml
     :alt: GitHub Actions CI Status
 
-.. image:: https://codecov.io/gh/spacetelescope/mast-aladin/branch/main/graph/badge.svg
-    :target: https://codecov.io/gh/spacetelescope/mast-aladin
-
 .. image:: https://readthedocs.org/projects/mast-aladin/badge/?version=latest
     :target: https://mast-aladin.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
