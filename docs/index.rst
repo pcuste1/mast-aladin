@@ -52,4 +52,5 @@ Contents
    installation
    getting_started
    performance_catalog
+   plugins
    api
