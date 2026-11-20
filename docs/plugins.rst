@@ -120,11 +120,9 @@ available in the plugin automatically.
 Limitations with jdaviz viewers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- A jdaviz application is only available for synchronization once it has an image
+- A `jdaviz` application is only available for synchronization once it has an Image
   viewer and its Orientation plugin has been configured to align by WCS with north up
-  and east to the left. The plugin configures this automatically, which requires data
-  to be loaded in the jdaviz viewer; until then, the viewer is disabled in the
-  dropdowns.
+  and east to the left (i.e., ``jdaviz.plugins['Orientation'].align_by = 'WCS'``). The plugin configures this automatically, which requires data to be loaded in the jdaviz viewer (i.e., ``jdaviz.load({image}, format='Image')``; until then, the viewer is disabled in the dropdowns. Currently, we only support Image viewers.
 - Projection synchronization is not supported in jdaviz: when a jdaviz viewer is a
   destination, the projection aspect is ignored.
 
