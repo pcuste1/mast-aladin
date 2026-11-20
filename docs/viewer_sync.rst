@@ -34,7 +34,7 @@ When synchronization starts, the destination viewers are immediately aligned to 
 The dropdown options track the applications registered with the `~mast_aladin.managers.app_manager.AppManager`, so newly created viewers become available in the plugin automatically.
 
 Supported viewport properties
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Center
 - Field of view
