@@ -6,14 +6,14 @@ The ``mast-aladin`` package supports plugins that extend its functionality. Plug
 Currently supported plugins
 ---------------------------
 
+- :doc:`Viewer Sync <viewer_sync>` (``viewer_sync``) keeps selected viewport properties
+  synchronized between `~mast_aladin.app.MastAladin` and ``jdaviz`` image
+  viewers.
+
 .. toctree::
-   :maxdepth: 1
+   :hidden:
 
-   Viewer Sync <viewer_sync>
-
-The Viewer Sync plugin (``viewer_sync``) keeps selected viewport properties
-synchronized between `~mast_aladin.app.MastAladin` and ``jdaviz`` image
-viewers.
+   viewer_sync
 
 
 How to use
